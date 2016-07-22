@@ -11,6 +11,11 @@
  * Decode: open -> encode:length:output -> close
  */
 
+/**
+ *  speex 的包装类,主要用来对
+ */
+
+
 #import <Foundation/Foundation.h>
 #import "SpeexAllHeaders.h"
 

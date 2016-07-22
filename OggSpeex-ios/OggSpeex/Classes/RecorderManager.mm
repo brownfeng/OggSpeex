@@ -52,6 +52,17 @@ AudioQueueLevelMeterState *levelMeterStates;
     
     return nil;
 }
+/**
+
+ 
+ 在startRecording函数中，先实例化类AQRecorder，该类是用C++实现的，主要用作录制音频文件（核心类）。随后调用函数AudioSessionInitialize初始化音频，并添加回调函数interruptionListener，若监听被打断则停止AQRecorder类的录制工作。若返回值不是error则对音频添加相应的属性，并且回调函数为propListener，若监听的属性不正确，就停止录音。当然了，所有的音频都是以文件为单位的，在startRecording函数中利用[EncapsulatordefaultFileName]来获取音频的存放地址，Encapsulator类也是一个很重要的类，它封装了ogg,极大的方便了我们调用它里面的函数来实现录音。
+ 函数- (void)stopRecording的作用大家想必都知道就是停止录音，但是不取消音频；
+ 函数- (void)cancelRecording的作用则是停止录音并且取消；
+ 函数recordedTimeInterval则是获取录音时间，单位为float;
+
+ 
+ */
+
 
 - (void)startRecording {
     if ( ! mAQRecorder) {
@@ -65,7 +76,7 @@ AudioQueueLevelMeterState *levelMeterStates;
             UInt32 category = kAudioSessionCategory_PlayAndRecord;
             error = AudioSessionSetProperty(kAudioSessionProperty_AudioCategory, sizeof(category), &category);
             if (error) printf("couldn't set audio category!");
-            
+           //添加属性监听，一旦有属性改变则调用其中的propListener函数
             error = AudioSessionAddPropertyListener(kAudioSessionProperty_AudioRouteChange, propListener, (__bridge void *)self);
             if (error) printf("ERROR ADDING AUDIO SESSION PROP LISTENER! %d\n", (int)error);
             UInt32 inputAvailable = 0;
@@ -84,7 +95,7 @@ AudioQueueLevelMeterState *levelMeterStates;
         }
         
     }
-    
+    //获取音频存放地址
     filename = [NSString stringWithString:[Encapsulator defaultFileName]];
     NSLog(@"filename:%@",filename);
     

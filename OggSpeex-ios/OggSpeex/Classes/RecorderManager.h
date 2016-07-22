@@ -12,12 +12,37 @@
 
 @protocol RecordingDelegate <NSObject>
 
+/**
+ *  录音结束以后的返回的时间和调用事件
+ *
+ *  @param filePath 录音以后保存的文件的地址
+ *  @param interval 整个录音的时间长度
+ */
 - (void)recordingFinishedWithFileName:(NSString *)filePath time:(NSTimeInterval)interval;
+
+/**
+ *  录音超时,默认超时时间是60s
+ */
 - (void)recordingTimeout;
-- (void)recordingStopped;  //录音机停止采集声音
+
+/**
+ *  录音机停止采集
+ */
+- (void)recordingStopped;
+
+/**
+ *  录音出错
+ *
+ *  @param failureInfoString 出错信息
+ */
 - (void)recordingFailed:(NSString *)failureInfoString;
 
 @optional
+/**
+ *  每0.1s会更新
+ *
+ *  @param levelMeter <#levelMeter description#>
+ */
 - (void)levelMeterChanged:(float)levelMeter;
 
 @end

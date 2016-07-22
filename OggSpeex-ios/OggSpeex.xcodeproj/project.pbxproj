@@ -31,9 +31,6 @@
 		F1DCBA7C1634E855000EB8C9 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DCBA7B1634E855000EB8C9 /* Default@2x.png */; };
 		F1DCBA7E1634E855000EB8C9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F1DCBA7D1634E855000EB8C9 /* Default-568h@2x.png */; };
 		F1DCBA811634E855000EB8C9 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1DCBA7F1634E855000EB8C9 /* MainStoryboard_iPhone.storyboard */; };
-		F1DCBA9A1634E856000EB8C9 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DCBA991634E856000EB8C9 /* SenTestingKit.framework */; };
-		F1DCBA9B1634E856000EB8C9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DCBA671634E855000EB8C9 /* UIKit.framework */; };
-		F1DCBA9C1634E856000EB8C9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DCBA691634E855000EB8C9 /* Foundation.framework */; };
 		F1DCBAC51634E9AA000EB8C9 /* bitwise.c in Sources */ = {isa = PBXBuildFile; fileRef = F1DCBAC11634E9AA000EB8C9 /* bitwise.c */; };
 		F1DCBAC61634E9AA000EB8C9 /* framing.c in Sources */ = {isa = PBXBuildFile; fileRef = F1DCBAC21634E9AA000EB8C9 /* framing.c */; };
 		F1DCBB361634EAEB000EB8C9 /* bits.c in Sources */ = {isa = PBXBuildFile; fileRef = F1DCBACD1634EAEB000EB8C9 /* bits.c */; };
@@ -79,16 +76,6 @@
 		F1DCBB661634EAEB000EB8C9 /* window.c in Sources */ = {isa = PBXBuildFile; fileRef = F1DCBB351634EAEB000EB8C9 /* window.c */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		F1DCBA9D1634E856000EB8C9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = F1DCBA5A1634E855000EB8C9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F1DCBA621634E855000EB8C9;
-			remoteInfo = OggSpeex;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		901BDFFC16650EAF007BF70B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		901BDFFE16650EB7007BF70B /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
@@ -131,7 +118,6 @@
 		F1DCBA7B1634E855000EB8C9 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		F1DCBA7D1634E855000EB8C9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		F1DCBA801634E855000EB8C9 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
-		F1DCBA981634E856000EB8C9 /* OggSpeexTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OggSpeexTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1DCBA991634E856000EB8C9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		F1DCBAC11634E9AA000EB8C9 /* bitwise.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = bitwise.c; path = Libs/libogg/bitwise.c; sourceTree = "<group>"; };
 		F1DCBAC21634E9AA000EB8C9 /* framing.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = framing.c; path = Libs/libogg/framing.c; sourceTree = "<group>"; };
@@ -252,16 +238,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1DCBA941634E856000EB8C9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F1DCBA9A1634E856000EB8C9 /* SenTestingKit.framework in Frameworks */,
-				F1DCBA9B1634E856000EB8C9 /* UIKit.framework in Frameworks */,
-				F1DCBA9C1634E856000EB8C9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -315,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				F1DCBA631634E855000EB8C9 /* OggSpeex.app */,
-				F1DCBA981634E856000EB8C9 /* OggSpeexTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -552,31 +527,13 @@
 			productReference = F1DCBA631634E855000EB8C9 /* OggSpeex.app */;
 			productType = "com.apple.product-type.application";
 		};
-		F1DCBA971634E856000EB8C9 /* OggSpeexTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F1DCBAAD1634E856000EB8C9 /* Build configuration list for PBXNativeTarget "OggSpeexTests" */;
-			buildPhases = (
-				F1DCBA931634E856000EB8C9 /* Sources */,
-				F1DCBA941634E856000EB8C9 /* Frameworks */,
-				F1DCBA951634E856000EB8C9 /* Resources */,
-				F1DCBA961634E856000EB8C9 /* ShellScript */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F1DCBA9E1634E856000EB8C9 /* PBXTargetDependency */,
-			);
-			name = OggSpeexTests;
-			productName = OggSpeexTests;
-			productReference = F1DCBA981634E856000EB8C9 /* OggSpeexTests.octest */;
-			productType = "com.apple.product-type.bundle";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F1DCBA5A1634E855000EB8C9 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastTestingUpgradeCheck = 0730;
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "Sense Force";
 			};
@@ -593,7 +550,6 @@
 			projectRoot = "";
 			targets = (
 				F1DCBA621634E855000EB8C9 /* OggSpeex */,
-				F1DCBA971634E856000EB8C9 /* OggSpeexTests */,
 			);
 		};
 /* End PBXProject section */
@@ -611,30 +567,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1DCBA951634E856000EB8C9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		F1DCBA961634E856000EB8C9 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F1DCBA5F1634E855000EB8C9 /* Sources */ = {
@@ -700,22 +633,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1DCBA931634E856000EB8C9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		F1DCBA9E1634E856000EB8C9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F1DCBA621634E855000EB8C9 /* OggSpeex */;
-			targetProxy = F1DCBA9D1634E856000EB8C9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		F1DCBA701634E855000EB8C9 /* InfoPlist.strings */ = {
@@ -789,10 +707,12 @@
 		F1DCBAAB1634E856000EB8C9 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OggSpeex/OggSpeex-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				INFOPLIST_FILE = "OggSpeex/OggSpeex-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brownfeng.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -801,45 +721,13 @@
 		F1DCBAAC1634E856000EB8C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OggSpeex/OggSpeex-Prefix.pch";
 				INFOPLIST_FILE = "OggSpeex/OggSpeex-Info.plist";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brownfeng.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		F1DCBAAE1634E856000EB8C9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OggSpeex.app/OggSpeex";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OggSpeex/OggSpeex-Prefix.pch";
-				INFOPLIST_FILE = "OggSpeexTests/OggSpeexTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
-			};
-			name = Debug;
-		};
-		F1DCBAAF1634E856000EB8C9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/OggSpeex.app/OggSpeex";
-				FRAMEWORK_SEARCH_PATHS = (
-					"\"$(SDKROOT)/Developer/Library/Frameworks\"",
-					"\"$(DEVELOPER_LIBRARY_DIR)/Frameworks\"",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "OggSpeex/OggSpeex-Prefix.pch";
-				INFOPLIST_FILE = "OggSpeexTests/OggSpeexTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
@@ -860,15 +748,6 @@
 			buildConfigurations = (
 				F1DCBAAB1634E856000EB8C9 /* Debug */,
 				F1DCBAAC1634E856000EB8C9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		F1DCBAAD1634E856000EB8C9 /* Build configuration list for PBXNativeTarget "OggSpeexTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F1DCBAAE1634E856000EB8C9 /* Debug */,
-				F1DCBAAF1634E856000EB8C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
