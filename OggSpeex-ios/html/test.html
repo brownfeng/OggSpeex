@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="bitstring.js"></script>
+    <script src="pcmdata.min.js"></script>
+    <script src="speex.min.js"></script>
+</head>
+<body>
+    <input type="file" id="harry" />
+
+    <script>
+        document.getElementById('harry').addEventListener('change', function (evt) {
+            var file = evt.target.files[0];
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                var tks = file.name.split(".");
+                var filename = tks[0],
+                        ext = tks[1];
+                var samples, sampleRate;
+
+                if (ext === "ogg" || ext === "spx") {
+                    var data = e.target.result,
+                            ret, header;
+                    ret = decodeFile(data);
+                    samples = ret[0];
+                    header = ret[1];
+                    sampleRate = header.rate;
+                    Speex.util.play(samples, sampleRate);
+                }
+            };
+            // Read the file as a Binary String
+            reader.readAsBinaryString(file);
+        }, false);
+
+        function decodeFile (file) {
+            var stream, samples, st;
+            var ogg, header;
+
+            ogg = new Ogg(file, { file: true });
+            ogg.demux();
+            stream = ogg.bitstream();
+
+            header = Speex.parseHeader(ogg.frames[0]);
+
+
+            comment = new SpeexComment(ogg.frames[1]);
+
+            console.log(ogg);
+            console.log(header);
+            console.log(comment.data);
+
+            st = new Speex({
+                quality: 4
+                ,	mode: header.mode
+                , rate: header.rate
+            });
+
+            samples = st.decode(stream, ogg.segments);
+
+            return [samples, header];
+        }
+
+    </script>
+</body>
+</html>

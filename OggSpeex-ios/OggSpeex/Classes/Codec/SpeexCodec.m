@@ -40,6 +40,14 @@
     }
 }
 
+/**
+ *  使用speex给pcmBuffer数据编码
+ *
+ *  @param pcmBuffer      要编码的pcmData
+ *  @param lengthOfShorts pcm数据的长度
+ *
+ *  @return 已经编码好的data
+ */
 - (NSData *)encode:(short *)pcmBuffer length:(int)lengthOfShorts {
     if (codecOpenedTimes == 0) {
 		return nil;

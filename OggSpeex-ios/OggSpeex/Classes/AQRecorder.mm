@@ -153,9 +153,9 @@ Boolean AQRecorder::StartRecord(Encapsulator *encapsulator) {
 	UInt32 size;
 	
 	mEncapsulator = encapsulator;
-    [mEncapsulator prepareForEncapsulating];
+    [mEncapsulator prepareForEncapsulating];//这里向文件中写入ogg page header 和comment
     
-    // specify the recording format
+    // specify the recording format, 设置record的音频的重要参数LPCM
     SetupAudioFormat(kAudioFormatLinearPCM);
     
     // create the queue

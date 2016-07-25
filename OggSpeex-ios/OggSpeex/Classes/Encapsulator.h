@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SpeexCodec.h"
 
-#define FRAME_SIZE 160 // PCM音频8khz*20ms -> 8000*0.02=160
+#define FRAME_SIZE 160 // PCM音频8khz*20ms -> 8000*0.02=160  由于每个frame 20msec,这里每个frame有多少字节 8000(8khz) * (1000msec / 20msec)hz = 160
 
 @class EncapsulatingOperation;
 
@@ -24,11 +24,11 @@
     NSMutableData *bufferData;  //用于ogg文件输出
     NSMutableData *tempData;    //用于输入的pcm切割剩余
     
-    NSMutableArray *pcmDatas;
+    NSMutableArray *pcmDatas;// 里面的数据是 Byte *
     
     NSOperationQueue *operationQueue;
     EncapsulatingOperation *encapsulationOperation;
-    NSString *mFileName;
+    NSString *mFileName;//包装类中的文件名称
     
     int mode;
     int sampleRate;
@@ -90,9 +90,9 @@ void writeString(unsigned char *dest, int offset, unsigned char *value, int leng
 
 @interface EncapsulatingOperation : NSOperation {
 
-    Encapsulator *mParent;
+    Encapsulator *mParent;//在哪个包装类中的operation
     
-    NSMutableArray *oggPeckets;
+    NSMutableArray *oggPeckets;//packets
     
     ogg_stream_state oggStreamState;
     ogg_page oggPage;
