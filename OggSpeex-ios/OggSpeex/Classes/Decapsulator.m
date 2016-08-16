@@ -13,7 +13,7 @@
 
 @interface Decapsulator()
 
-//将ogg格式数据转换为pcm数据
+//将ogg格式数据转换为pcm数据,即从文件系统中读取音频文件
 - (void)convertOggToPCMWithData:(NSData *)oggData;
 
 //packet转换完成
@@ -68,10 +68,14 @@
     [self.player inputNewDataFromBuffer:decodedData size:dataSize];
 }
 
-//将ogg格式数据转换为pcm数据
+/**
+ *  一次性将所有的ogg格式容器转化成PCM
+ *
+ *  @param oggData ogg数据
+ */
 - (void )convertOggToPCMWithData:(NSData *)oggData {
     const Byte *oggBytes = [oggData bytes];
-    int oggByteSize = [oggData length];
+    int oggByteSize = (int)[oggData length];
     int readedBytes = 0;
     NSUInteger decodedByteLength = 0;
     
@@ -84,11 +88,11 @@
     while (isPlaying) {
         
         int byteSizeToRead = oggByteSize - readedBytes;
-        if (byteSizeToRead > DESIRED_BUFFER_SIZE) {
+        if (byteSizeToRead > DESIRED_BUFFER_SIZE) {//每次缓冲使用4096字节
             byteSizeToRead = DESIRED_BUFFER_SIZE;
         }
         char *buffer = ogg_sync_buffer(&oggSyncState, DESIRED_BUFFER_SIZE);
-        memcpy(buffer, oggBytes, byteSizeToRead);    //!!!
+        memcpy(buffer, oggBytes, byteSizeToRead);    //!!!,直接copy到buffer或者read到buffer
         oggBytes += byteSizeToRead;
         readedBytes += byteSizeToRead;
         NSLog(@"byteSizeToRead = %d, oggByteSize = %d, readedBytes = %d", byteSizeToRead, oggByteSize, readedBytes);
